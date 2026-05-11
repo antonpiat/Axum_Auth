@@ -17,17 +17,6 @@ use crate::{
     AppState,
 };
 
-pub async fn health_checker() -> impl IntoResponse {
-    const MESSAGE: &str = "JWT Authentication in Rust using Axum, Postgres, and SQLX";
-
-    let json_response = json!({
-        "status": "success",
-        "message": MESSAGE,
-    });
-
-    Json(json_response)
-}
-
 pub async fn register_user(
     State(data): State<Arc<AppState>>,
     Json(body): Json<RegisterUserSchema>,

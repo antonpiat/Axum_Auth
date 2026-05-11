@@ -10,7 +10,6 @@ use crate::jwt_auth::auth;
 
 pub fn create_router(app_state: Arc<AppState>) -> Router {
     Router::new()
-        .route("/api/healthchecker",  get(health_checker))
         .route("/api/auth/register", post(register_user))
         .route("/api/auth/login", post(login_user))
         .route("/api/auth/logout",get(logout_user)
